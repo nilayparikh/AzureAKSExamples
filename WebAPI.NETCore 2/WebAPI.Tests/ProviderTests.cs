@@ -8,7 +8,7 @@ namespace WebAPI.Tests
         [Fact]
         public void ProviderTestCase1()
         {
-            Assert.Equal(1, 1);
+            Assert.Equal(2, 2);
         }
     }
 }
