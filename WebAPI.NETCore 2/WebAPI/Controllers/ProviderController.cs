@@ -11,7 +11,7 @@ namespace WebAPI.Controllers
     {
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id = 11)
+        public string Get(int id)
         {
             return "value " + id;
         }

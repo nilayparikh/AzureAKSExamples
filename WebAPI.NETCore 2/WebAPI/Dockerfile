@@ -7,7 +7,12 @@ WORKDIR /src
 COPY *.sln ./
 COPY WebAPI/WebAPI.csproj WebAPI/
 RUN dotnet restore
+
 COPY . .
+
+ENV TEAMCITY_PROJECT_NAME=fake
+RUN dotnet test WebAPI.Tests/WebAPI.Tests.csproj
+
 WORKDIR /src/WebAPI
 RUN dotnet build -c Release -o /app
 
