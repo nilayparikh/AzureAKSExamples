@@ -8,12 +8,12 @@ namespace API.IntegrationTests
     {
 
         public RestClient consumerClient = default(RestClient);
-        public RestClient publisherClient = default(RestClient);
+        public RestClient providerClient = default(RestClient);
 
         public IntegrationTests()
         {
             consumerClient = new RestClient("http://webapi");
-            publisherClient = new RestClient("http://corewebapi");
+            providerClient = new RestClient("http://corewebapi");
         }
 
         [Fact]
@@ -40,7 +40,7 @@ namespace API.IntegrationTests
             var requestToProvider = new RestRequest("/api/Provider/{id}", Method.GET);
             requestToProvider.AddUrlSegment("id", inputId);
 
-            var responseFromProvider = consumerClient.Execute(requestToProvider);
+            var responseFromProvider = providerClient.Execute(requestToProvider);
             var content = responseFromProvider.Content;
 
             Console.Write(content);
