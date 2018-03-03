@@ -19,12 +19,11 @@ services:
     ports:
       - "8090:80"
 
-  #api.integrationtests:
-  #  image: localhost:5000/apiintegrationtests
-  #  build:
-  #    context: .
-#      dockerfile: Tests/API.IntegrationTests/Dockerfile
-#    links:
-#      - corewebapi
-#      - webapi
-#
+  apiintegrationtests:
+    image: localhost:5000/apiintegrationtests
+    build:
+      context: .
+      dockerfile: Tests/API.IntegrationTests/Dockerfile
+    links:
+      - corewebapi
+      - webapi
