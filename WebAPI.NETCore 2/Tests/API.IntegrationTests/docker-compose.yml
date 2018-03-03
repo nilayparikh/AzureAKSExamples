@@ -12,12 +12,3 @@ services:
     image: localhost:5000/corewebapi
     ports:
       - "8090:80"
-
-  webapiintegrationtests:
-    image: localhost:5000/webapiintegrationtests
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    links:
-      - corewebapi
-      - webapi
