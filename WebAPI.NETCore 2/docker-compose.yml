@@ -24,4 +24,7 @@ services:
     build:
       context: .
       dockerfile: Tests/API.IntegrationTests/Dockerfile
+    links:
+      - corewebapi
+      - webapi
 

@@ -9,6 +9,7 @@ RUN dotnet restore
 COPY . .
 WORKDIR /src/Tests/API.IntegrationTests
 RUN dotnet build
+RUN dotnet test
 
 #FROM build AS publish
 #RUN dotnet publish -c Release -o /app
