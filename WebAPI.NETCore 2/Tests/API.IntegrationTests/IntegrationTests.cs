@@ -17,7 +17,7 @@ namespace API.IntegrationTests
         [Fact]
         public void IntegrationTest1()
         {
-            var inputId = 11;
+            var inputId = "11";
 
             var requestToProvider = new RestRequest("/api/Consumer/{id}", Method.GET);
             requestToProvider.AddUrlSegment("id", inputId);
@@ -25,7 +25,7 @@ namespace API.IntegrationTests
             var responseFromProvider = consumerClient.Execute(requestToProvider);
             var content = responseFromProvider.Content;
 
-            Assert.Contains(content, inputId.ToString());
+            Assert.Contains(inputId, content);
         }
     }
 }
