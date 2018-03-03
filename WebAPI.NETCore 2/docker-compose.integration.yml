@@ -3,9 +3,6 @@ version: '3'
 services:
   webapi:
     image: localhost:5000/webapi
-    build:
-      context: .
-      dockerfile: WebAPI/Dockerfile
     ports:
       - "8091:80"
     links:
@@ -13,8 +10,5 @@ services:
 
   corewebapi:
     image: localhost:5000/corewebapi
-    build:
-      context: .
-      dockerfile: CoreWebAPI/Dockerfile
     ports:
       - "8090:80"
