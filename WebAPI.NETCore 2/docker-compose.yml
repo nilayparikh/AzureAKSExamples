@@ -6,3 +6,10 @@ services:
     build:
       context: .
       dockerfile: WebAPI/Dockerfile
+
+  corewebapi:
+    image: corewebapi
+    build:
+      context: .
+      dockerfile: CoreWebAPI/Dockerfile
+

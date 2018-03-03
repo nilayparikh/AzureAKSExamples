@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace WebAPI
+namespace CoreWebAPI
 {
     public class Startup
     {
@@ -29,7 +29,7 @@ namespace WebAPI
             // Register the Swagger generator, defining one or more Swagger documents  
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "WebAPI V1", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "CoreWebAPI V1", Version = "v1" });
             });
         }
 
@@ -49,7 +49,7 @@ namespace WebAPI
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.  
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CoreWebAPI V1");
             });
 
             app.UseMvc();

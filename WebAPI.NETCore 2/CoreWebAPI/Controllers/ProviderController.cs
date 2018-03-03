@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebAPI.Controllers
+namespace CoreWebAPI.Controllers
 {
     [Route("api/[controller]")]
     public class ProviderController : Controller
@@ -13,7 +13,7 @@ namespace WebAPI.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value " + id;
+            return "provider api - " + id;
         }
     }
 }

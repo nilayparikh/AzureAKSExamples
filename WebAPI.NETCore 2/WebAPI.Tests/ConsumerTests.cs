@@ -3,10 +3,10 @@ using Xunit;
 
 namespace WebAPI.Tests
 {
-    public class ProviderTests
+    public class ConsumerTests
     {
         [Fact]
-        public void ProviderTestCase1()
+        public void ConsumerTestCase1()
         {
             Assert.Equal(2, 2);
         }
