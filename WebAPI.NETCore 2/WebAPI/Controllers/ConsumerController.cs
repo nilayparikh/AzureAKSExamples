@@ -28,7 +28,7 @@ namespace WebAPI.Controllers
             var responseFromProvider = providerClient.Execute(requestToProvider);
             var content = responseFromProvider.Content;
 
-            return "Response from provider " + content;
+            return "Response from provider 1 " + content;
         }
     }
 }

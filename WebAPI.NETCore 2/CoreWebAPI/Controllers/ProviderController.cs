@@ -14,7 +14,7 @@ namespace CoreWebAPI.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "provider api - " + id;
+            return "provider api 1 - " + id;
         }
     }
 }
