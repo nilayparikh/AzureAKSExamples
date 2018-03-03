@@ -8,10 +8,12 @@ namespace API.IntegrationTests
     {
 
         public RestClient consumerClient = default(RestClient);
+        public RestClient publisherClient = default(RestClient);
 
         public IntegrationTests()
         {
             consumerClient = new RestClient("http://webapi");
+            publisherClient = new RestClient("http://corewebapi");
         }
 
         [Fact]
@@ -19,13 +21,31 @@ namespace API.IntegrationTests
         {
             var inputId = "11";
 
-            var requestToProvider = new RestRequest("/api/Consumer/{id}", Method.GET);
+            var requestToConsumer = new RestRequest("/api/Consumer/{id}", Method.GET);
+            requestToConsumer.AddUrlSegment("id", inputId);
+
+            var responseFromConsumer = consumerClient.Execute(requestToConsumer);
+            var content = responseFromConsumer.Content;
+
+            Console.Write(content);
+
+            Assert.True(content.Length > 0);
+        }
+
+        [Fact]
+        public void IntegrationTest2()
+        {
+            var inputId = "11";
+
+            var requestToProvider = new RestRequest("/api/Provider/{id}", Method.GET);
             requestToProvider.AddUrlSegment("id", inputId);
 
             var responseFromProvider = consumerClient.Execute(requestToProvider);
             var content = responseFromProvider.Content;
 
-            Assert.Contains(inputId, content);
+            Console.Write(content);
+
+            Assert.True(content.Length > 0);
         }
     }
 }
