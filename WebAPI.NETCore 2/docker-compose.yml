@@ -2,7 +2,7 @@ version: '3'
 
 services:
   webapi:
-    image: localhost:5000/webapi
+    image: nilayparikh/webapi
     build:
       context: .
       dockerfile: WebAPI/Dockerfile
@@ -12,7 +12,7 @@ services:
       - corewebapi
 
   corewebapi:
-    image: localhost:5000/corewebapi
+    image: nilayparikh/corewebapi
     build:
       context: .
       dockerfile: CoreWebAPI/Dockerfile

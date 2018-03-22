@@ -14,9 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWebAPI", "CoreWebAPI\CoreWebAPI.csproj", "{93BCA7BA-F0AA-4EA0-9128-EECCF77A5F8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreWebAPI", "CoreWebAPI\CoreWebAPI.csproj", "{93BCA7BA-F0AA-4EA0-9128-EECCF77A5F8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWebAPI.Tests", "CoreWebAPI.Tests\CoreWebAPI.Tests.csproj", "{BB00B767-A89F-4844-9896-7996205FA712}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreWebAPI.Tests", "CoreWebAPI.Tests\CoreWebAPI.Tests.csproj", "{BB00B767-A89F-4844-9896-7996205FA712}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Provider", "Provider", "{4D739C8D-5A4D-4144-B1AB-2F9282165D3A}"
 EndProject
@@ -26,7 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CB51C5A3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{20CE736E-F2FF-4F2B-92ED-8719E81A4BA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.IntegrationTests", "Tests\API.IntegrationTests\API.IntegrationTests.csproj", "{DBFC0E74-E8FB-4872-A713-26EF25C97F1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.IntegrationTests", "Tests\API.IntegrationTests\API.IntegrationTests.csproj", "{DBFC0E74-E8FB-4872-A713-26EF25C97F1A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebUXI", "WebUXI", "{5F4BE932-D039-4481-A70B-449D8C60C535}"
 EndProject

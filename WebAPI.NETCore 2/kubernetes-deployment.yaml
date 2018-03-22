@@ -1,0 +1,60 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: corewebapi
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: corewebapi
+    spec:
+      containers:
+      - name: corewebapi
+        image: nilayparikh/corewebapi
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: corewebapi
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: corewebapi
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: webapi
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: webapi
+    spec:
+      containers:
+      - name: webapi
+        image: nilayparikh/webapi
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapi
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: webapi

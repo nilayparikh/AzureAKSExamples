@@ -1,0 +1,31 @@
+# Default values for APIDeploymentChart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+coreWebAPI:
+  name: corewebapi
+  replicaCount: 3
+
+  image:
+    repository: nilayparikh/corewebapi
+    tag: latest
+    pullPolicy: IfNotPresent
+
+  service:
+    type: LoadBalancer
+    port: 80
+
+webAPI:
+  name: webapi
+  replicaCount: 3
+
+  image:
+    repository: nilayparikh/webapi
+    tag: latest
+    pullPolicy: IfNotPresent
+
+  service:
+    type: LoadBalancer
+    port: 80
+ingress:
+  enabled: false

@@ -1,0 +1,46 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Values.coreWebAPI.name }}
+  release: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.coreWebAPI.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.coreWebAPI.name }}
+        chart: {{ .Chart.Name }}
+        release: {{ .Release.Name }}
+        heritage: {{ .Release.Service }}
+    spec:
+      containers:
+      - name: {{ .Values.coreWebAPI.name }}
+        image: {{ .Values.coreWebAPI.image.repository }}:{{ .Values.coreWebAPI.image.tag }}
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Values.webAPI.name }}
+  release: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.webAPI.replicaCount }}
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.webAPI.name }}
+        chart: {{ .Chart.Name }}
+        release: {{ .Release.Name }}
+        heritage: {{ .Release.Service }}
+    spec:
+      containers:
+      - name: {{ .Values.webAPI.name }}
+        image: {{ .Values.webAPI.image.repository }}:{{ .Values.webAPI.image.tag }}
+        ports:
+        - containerPort: 80

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using RestSharp;
 
 namespace WebAPI.Controllers
@@ -10,11 +11,14 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class ConsumerController : Controller
     {
-        public RestClient providerClient = default(RestClient);
+        public RestClient ProviderClient = default(RestClient);
+        public IConfiguration Configuration = default(IConfiguration);
 
-        public ConsumerController()
+        public ConsumerController(IConfiguration configuration)
         {
-            providerClient = new RestClient("http://corewebapi");
+            Configuration = configuration;
+
+            ProviderClient = new RestClient("http://corewebapi");
         }
 
         // GET api/values/5
@@ -25,7 +29,7 @@ namespace WebAPI.Controllers
             var requestToProvider = new RestRequest("/api/Provider/{id}", Method.GET);
             requestToProvider.AddUrlSegment("id", id);
 
-            var responseFromProvider = providerClient.Execute(requestToProvider);
+            var responseFromProvider = ProviderClient.Execute(requestToProvider);
             var content = responseFromProvider.Content;
 
             return "Response from provider 1 " + content;

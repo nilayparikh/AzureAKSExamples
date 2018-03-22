@@ -26,6 +26,8 @@ namespace WebAPI
         {
             services.AddMvc();
 
+            services.AddSingleton<IConfiguration>(Configuration);
+
             // Register the Swagger generator, defining one or more Swagger documents  
             services.AddSwaggerGen(c =>
             {
