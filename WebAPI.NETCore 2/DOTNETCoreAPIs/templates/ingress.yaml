@@ -1,18 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: dotnetcoreapi-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: dotnetcoreapi-nginx-ingress
 spec:
+  replicas: 3
   rules:
   - http:
       paths:
       - path: /frontend
         backend:
-          serviceName: {{ .Release.Name }}-{{ .Values.webAPI.name }}
+          serviceName: {{ .Values.webAPI.name }}
           servicePort: 80
       - path: /backend
         backend:
-          serviceName: {{ .Release.Name }}-{{ .Values.coreWebAPI.name }}
+          serviceName: {{ .Values.coreWebAPI.name }}
           servicePort: 80
