@@ -5,6 +5,7 @@ metadata:
 spec:
   replicas: 3
   rules:
+  - host: mymicroservices.nilayparikh
   - http:
       paths:
       - path: /frontend
