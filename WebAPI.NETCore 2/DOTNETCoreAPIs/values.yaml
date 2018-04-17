@@ -8,7 +8,7 @@ coreWebAPI:
 
   image:
     repository: nilayparikh/corewebapi
-    tag: latest
+    tag: helm-intro
     pullPolicy: IfNotPresent
 
   service:
@@ -21,7 +21,7 @@ webAPI:
 
   image:
     repository: nilayparikh/webapi
-    tag: latest
+    tag: helm-intro
     pullPolicy: IfNotPresent
 
   service:
