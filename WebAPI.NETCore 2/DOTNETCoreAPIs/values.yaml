@@ -4,7 +4,7 @@
 
 coreWebAPI:
   name: corewebapi
-  replicaCount: 3
+  replicaCount: 2
 
   image:
     repository: nilayparikh/corewebapi
@@ -17,7 +17,7 @@ coreWebAPI:
 
 webAPI:
   name: webapi
-  replicaCount: 3
+  replicaCount: 2
 
   image:
     repository: nilayparikh/webapi
@@ -27,5 +27,3 @@ webAPI:
   service:
     type: LoadBalancer
     port: 80
-ingress:
-  enabled: false
