@@ -8,8 +8,8 @@ coreWebAPI:
 
   image:
     repository: nilayparikh/corewebapi
-    tag: helm-intro
-    pullPolicy: IfNotPresent
+    tag: latest
+    pullPolicy: Always
 
   service:
     type: LoadBalancer
@@ -21,8 +21,8 @@ webAPI:
 
   image:
     repository: nilayparikh/webapi
-    tag: helm-intro
-    pullPolicy: IfNotPresent
+    tag: latest
+    pullPolicy: Always
 
   service:
     type: LoadBalancer

@@ -32,7 +32,7 @@ namespace WebAPI.Controllers
             var responseFromProvider = ProviderClient.Execute(requestToProvider);
             var content = responseFromProvider.Content;
 
-            return "Response from provider 1 " + content;
+            return "Response from provider is " + content;
         }
     }
 }

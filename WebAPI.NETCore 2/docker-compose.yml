@@ -18,3 +18,9 @@ services:
       dockerfile: CoreWebAPI/Dockerfile
     ports:
       - "8090:80"
+ # website:
+ #   image: website
+ #   build:
+ #     context: .
+ #     dockerfile: ../Website/Dockerfile
+
